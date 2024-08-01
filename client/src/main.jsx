@@ -10,9 +10,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
      domain="dev-spp8057zfmej1qlr.us.auth0.com"
      clientId="ReKvQ0zKNSYLrBGsQdmvCSjRHNtwvR3k"
      authorizationParams={{
-      redirect_uri: "https://business-mtaamall.vercel.app/"
+      redirect_uri: "https://business-mtaamall.vercel.app"
      }}
-     audience="https://business-mtaamallserver.vercel.app/api/business/allbiz"
+     audience="https://business-mtaamallserver.vercel.app"
      scope="openid profile email"
     >
       <App />
