@@ -24,7 +24,8 @@ const UploadImage = ({
       {
         cloudName: "de6wrlfep",
         uploadPreset: "vnoeknwt",
-        maxFiles: 4, // Allow multiple file uploads
+        maxFiles: 4,
+        clientAllowedFormats: ["jpg", "jpeg", "png"],
       },
       (err, result) => {
         if (result.event === "success") {
@@ -41,7 +42,7 @@ const UploadImage = ({
         onClick={() => widgetRef.current?.open()}
       >
         <AiOutlineCloudUpload size={50} color="grey" />
-        <span>Upload upto 4 Images</span>
+        <span>Upload up to 4 Images</span>
       </div>
 
       <div className="uploadedImages">
@@ -56,7 +57,7 @@ const UploadImage = ({
         <Button variant="default" onClick={prevStep}>
           Back
         </Button>
-        <Button color="red"onClick={handleNext} disabled={imageURLs.length === 0}>
+        <Button color="red" onClick={handleNext} disabled={imageURLs.length === 0}>
           Next
         </Button>
       </Group>
