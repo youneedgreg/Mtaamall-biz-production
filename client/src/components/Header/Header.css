@@ -19,6 +19,10 @@
 .menu-icon {
   display: none;
 }
+.button {
+  background-color: white;
+  color:black
+}
 
 @media (max-width: 768px) {
   .menu-icon {

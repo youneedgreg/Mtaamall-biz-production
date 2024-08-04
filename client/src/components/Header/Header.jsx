@@ -51,7 +51,7 @@ const Header = () => {
             <AddPropertyModal opened={modalOpened} setOpened={setModalOpened} />
             {/* login button */}
             {!isAuthenticated ? (
-              <button color="white" className="button" onClick={loginWithRedirect}>
+              <button background-color="white" color="black" className="button" onClick={loginWithRedirect}>
                 Login
               </button>
             ) : (
