@@ -102,12 +102,11 @@ const Socials = ({
         />
         <TextInput
           withAsterisk
-          label="Email"
+          label="Business Email"
           placeholder="Johndoe@gmail.com"
           {...form.getInputProps("email")}
         />
         <TextInput
-          withAsterisk
           label="website"
           placeholder="your website link"
           {...form.getInputProps("website")}
@@ -133,7 +132,6 @@ const Socials = ({
           {...form.getInputProps("facebook")}
         />
         <TextInput
-          withAsterisk
           label="youtube"
           placeholder="youtube"
           {...form.getInputProps("youtube")}
