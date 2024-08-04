@@ -96,7 +96,7 @@ const Socials = ({
       >
         <TextInput
           withAsterisk
-          label="Phone Number"
+          label="Whatsapp Business Number"
           placeholder="07......"
           {...form.getInputProps("phone")}
         />
