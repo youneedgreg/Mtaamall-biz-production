@@ -8,7 +8,7 @@ const [headerColor, setHeaderColor] = useState(false)
       if (window.scrollY > 8) {
         setHeaderColor("#f6052d")
       } else {
-        setHeaderColor("none");
+        setHeaderColor("#f6052d");
       }
     }
     window.addEventListener("scroll", handleScroll);
