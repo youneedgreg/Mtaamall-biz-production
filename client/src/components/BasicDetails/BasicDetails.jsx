@@ -1,5 +1,5 @@
 import React from "react";
-import { TextInput, Box, Textarea, Group, Button, NumberInput } from "@mantine/core";
+import { TextInput, Box, Textarea, Group, Button } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { validateString } from "../../utils/common";
 
@@ -11,10 +11,15 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
       sdescription: propertyDetails.sdescription,
       ldescription: propertyDetails.ldescription,
       additionalinfo: propertyDetails.additionalinfo,
-
     },
     validate: {
-      userEmail: (value) => validateString(value),
+      userEmail: (value) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          return 'Invalid email address';
+        }
+        return null;
+      },
       title: (value) => validateString(value),
       sdescription: (value) => validateString(value),
       ldescription: (value) => validateString(value),
@@ -22,23 +27,23 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
     },
   });
 
-  const {userEmail, title, sdescription, ldescription, additionalinfo} = form.values
+  const { userEmail, title, sdescription, ldescription, additionalinfo } = form.values;
 
-
-  const handleSubmit = ()=> {
-    const {hasErrors} = form.validate()
-    if(!hasErrors) {
-     setPropertyDetails((prev)=> ({...prev,userEmail, title, sdescription, ldescription, additionalinfo}))
-     nextStep()
+  const handleSubmit = () => {
+    const { hasErrors } = form.validate();
+    if (!hasErrors) {
+      setPropertyDetails((prev) => ({ ...prev, userEmail, title, sdescription, ldescription, additionalinfo }));
+      nextStep();
     }
-   }
+  };
+
   return (
     <Box maw="50%" mx="auto" my="md">
-      <form  onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit();
-        }}>
-          <TextInput
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        handleSubmit();
+      }}>
+        <TextInput
           withAsterisk
           label="MtaaMall email"
           placeholder="Same email on your mtaamall account"
@@ -56,13 +61,13 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
           withAsterisk
           {...form.getInputProps("sdescription")}
         />
-         <Textarea
+        <Textarea
           placeholder="Description"
           label="Long Description"
           withAsterisk
           {...form.getInputProps("ldescription")}
         />
-         <Textarea
+        <Textarea
           placeholder="eg.,haram or not"
           label="Additional Information"
           withAsterisk
@@ -72,7 +77,7 @@ const BasicDetails = ({ prevStep, nextStep, propertyDetails, setPropertyDetails 
           <Button variant="default" onClick={prevStep}>
             Back
           </Button>
-          <Button color="red"type="submit">
+          <Button color="red" type="submit">
             Next step
           </Button>
         </Group>
