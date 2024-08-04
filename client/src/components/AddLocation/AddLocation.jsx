@@ -9,9 +9,9 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
   const { getAll } = useCountries();
   const form = useForm({
     initialValues: {
-      category: propertyDetails?.category,
-      country: propertyDetails?.country,
-      city: propertyDetails?.city,
+      category: propertyDetails?.category || 'eateries',
+      country: propertyDetails?.country || 'Kenya',
+      city: propertyDetails?.city || 'Nairobi',
       address: propertyDetails?.address,
     },
 
@@ -70,6 +70,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
               { value: 'recreation', label: 'Recreation' },
             ]}
             {...form.getInputProps("category")}
+            disabled
           />
           <Select
             w={"100%"}
@@ -79,6 +80,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
             searchable
             data={getAll()}
             {...form.getInputProps("country", { type: "input" })}
+            disabled
           />
 
           <TextInput
@@ -86,6 +88,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
             withAsterisk
             label="City"
             {...form.getInputProps("city", { type: "input" })}
+            disabled
           />
 
           <TextInput
@@ -104,7 +107,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
       </div>
 
       <Group position="center" mt={"xl"}>
-        <Button color="red"type="submit">Next Step</Button>
+        <Button color="red" type="submit">Next Step</Button>
       </Group>
     </form>
   );
