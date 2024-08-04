@@ -24,7 +24,7 @@ const Header = () => {
     }
   };
   return (
-    <section className="h-wrapper" style={{ background: headerColor }}>
+    <section className="h-wrapper" color="#f6052d"style={{ background: headerColor }}>
       <div className="flexCenter innerWidth paddings h-container">
         {/* logo */}
         <Link to="https://mtaamall.vercel.app/">
