@@ -37,7 +37,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
     }
   };
 
-  const { category, country, city, address } = form.values;
+  const { category, country, subcategory, city, address } = form.values;
 
   const handleSubmit = () => {
     const { hasErrors } = form.validate();
