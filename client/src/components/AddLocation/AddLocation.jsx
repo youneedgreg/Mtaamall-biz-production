@@ -22,7 +22,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
     validate: {
       category: (value) => validateString(value),
       country: (value) => validateString(value),
-      subcategory: (value) => validateString(value),
+      subcategory: (value) => Array.isArray(value) && value.length > 0 ? null : 'Please select at least one subcategory',
       city: (value) => validateString(value),
       address: (value) => validateString(value),
     },
