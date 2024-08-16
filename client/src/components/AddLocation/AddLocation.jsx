@@ -10,6 +10,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
   const form = useForm({
     initialValues: {
       category: propertyDetails?.category || 'eateries',
+      subcategory: propertyDetails?.subcategory || '',
       country: propertyDetails?.country || 'Kenya',
       city: propertyDetails?.city || 'Nairobi',
       address: propertyDetails?.address,
@@ -18,10 +19,23 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
     validate: {
       category: (value) => validateString(value),
       country: (value) => validateString(value),
+      subcategory: (value) => validateString(value),
       city: (value) => validateString(value),
       address: (value) => validateString(value),
     },
   });
+
+  const getSubcategories = (category) => {
+    switch (category) {
+      case 'eateries':
+        return ['hotels', 'kibandas', 'snacks and bites', 'parlours and puddings'];
+      case 'grooming':
+        return ['Barbershops', 'salons', 'nail spas'];
+      // Add more cases if there are other categories
+      default:
+        return [];
+    }
+  };
 
   const { category, country, city, address } = form.values;
 
@@ -31,6 +45,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
       setPropertyDetails((prev) => ({
         ...prev,
         category,
+        subcategory,
         city,
         address,
         country,
@@ -68,10 +83,19 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
               { value: 'services', label: 'Services' },
               { value: 'photography', label: 'Photography' },
               { value: 'recreation', label: 'Recreation' },
+              { value: 'grooming', label: 'Grooming' },
             ]}
             {...form.getInputProps("category")}
             disabled
           />
+          <Select
+  withAsterisk
+  label="Sub Category"
+  placeholder="Select subcategory"
+  data={getSubcategories(form.values.category).map((sub) => ({ value: sub, label: sub }))}
+  {...form.getInputProps("subcategory")}
+/>
+
           <Select
             w={"100%"}
             withAsterisk

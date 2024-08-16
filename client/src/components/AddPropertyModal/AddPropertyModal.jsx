@@ -16,6 +16,7 @@ const AddPropertyModal = ({ opened, setOpened }) => {
     sdescription: "",
     ldescription: "",
     category: "",
+    subcategory: "",
     address: "",
     country: "",
     city: "",

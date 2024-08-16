@@ -23,6 +23,7 @@ model Business {
     sdescription   String
     ldescription   String
     category       String
+    subcategory    String
     address        String
     city           String
     country        String
