@@ -33,7 +33,11 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
       case 'eateries':
         return ['hotels', 'kibandas', 'snacks and bites', 'parlours and puddings'];
       case 'grooming':
-        return ['Barbershops', 'salons', 'nail spas'];
+        return ['Barbershops', 'salons', 'nail spas', 'beauty products', 'perfume', 'cologne', 'hygiene'];
+      case 'recreation':
+        return ['Gaming Lounge', 'Physical Sports', 'Clubbing/Lounging', 'Bowling(indoor)', 'pool', 'theatre', 'hygiene', "outdoor", 'hiking', 'viewing lounge'];
+      case 'services':
+        return ['Cyber Printing', 'Repairs', 'tailoring and shoe repair', 'Laundry'];
       // Add more cases if there are other categories
       default:
         return [];
