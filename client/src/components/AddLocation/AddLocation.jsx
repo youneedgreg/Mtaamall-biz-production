@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useForm } from "@mantine/form";
 import { validateString } from "../../utils/common";
-import { Button, Group, Select, TextInput } from "@mantine/core";
+import { Button, Group, MultiSelect, Select, TextInput } from "@mantine/core";
 import useCountries from "../../hooks/useCountries";
 import Map from "../Map/Map";
 
 const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
   const { getAll } = useCountries();
+  const [opened, setOpened] = useState(false);
+  const dropdownRef = useRef(null);
+
   const form = useForm({
     initialValues: {
       category: propertyDetails?.category || 'eateries',
-      subcategory: propertyDetails?.subcategory || '',
+      subcategory: propertyDetails?.subcategory || [],
       country: propertyDetails?.country || 'Kenya',
       city: propertyDetails?.city || 'Nairobi',
       address: propertyDetails?.address,
@@ -54,6 +57,20 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
     }
   };
 
+  // Handle closing dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpened(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
+
   return (
     <form
       onSubmit={(e) => {
@@ -88,13 +105,20 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
             {...form.getInputProps("category")}
             disabled
           />
-          <Select
-  withAsterisk
-  label="Sub Category"
-  placeholder="Select subcategory"
-  data={getSubcategories(form.values.category).map((sub) => ({ value: sub, label: sub }))}
-  {...form.getInputProps("subcategory")}
-/>
+          <div ref={dropdownRef}>
+            <MultiSelect
+              withAsterisk
+              label="Sub Category"
+              placeholder="Select subcategories"
+              data={getSubcategories(form.values.category).map((sub) => ({ value: sub, label: sub }))}
+              {...form.getInputProps("subcategory")}
+              value={subcategory}
+              onChange={(values) => form.setFieldValue("subcategory", values)}
+              onDropdownOpen={() => setOpened(true)}
+              onDropdownClose={() => setOpened(false)}
+              opened={opened}
+            />
+          </div>
 
           <Select
             w={"100%"}
