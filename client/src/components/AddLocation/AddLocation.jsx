@@ -37,7 +37,7 @@ const AddLocation = ({ propertyDetails, setPropertyDetails, nextStep }) => {
       case 'recreation':
         return ['Gaming Lounge', 'Physical Sports', 'Clubbing/Lounging', 'Bowling(indoor)', 'pool', 'theatre', 'hygiene', "outdoor", 'hiking', 'viewing lounge'];
       case 'services':
-        return ['Cyber Printing', 'Repairs', 'tailoring and shoe repair', 'Laundry services'];
+        return ['Cyber Printing', 'Repairs', 'tailoring and shoe repair', 'Laundry'];
       // Add more cases if there are other categories
       default:
         return [];
