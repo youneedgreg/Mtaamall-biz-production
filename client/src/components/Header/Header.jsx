@@ -44,10 +44,10 @@ const Header = () => {
           >
             
 
-            <a href="mailto:gregorytemwa1212@gmail.com">Contact us</a>
+            <a href="mailto:gregorytemwa1212@gmail.com" style={{color: "black"}}>Contact us</a>
 
             {/* add property */}
-            <div onClick={handleAddPropertyClick}>Add Listing</div>
+            <div onClick={handleAddPropertyClick} style={{color: "red"}}>Add Listing</div>
             <AddPropertyModal opened={modalOpened} setOpened={setModalOpened} />
             {/* login button */}
             {!isAuthenticated ? (
