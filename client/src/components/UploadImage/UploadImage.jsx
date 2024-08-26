@@ -42,7 +42,8 @@ const UploadImage = ({
         onClick={() => widgetRef.current?.open()}
       >
         <AiOutlineCloudUpload size={50} color="grey" />
-        <span>Upload up to 4 Images</span>
+        <span><strong>The first image uploaded will be your Company Logo</strong></span>
+        <span><i>Upload up to 4 Images</i></span>
       </div>
 
       <div className="uploadedImages">
