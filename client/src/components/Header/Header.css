@@ -3,31 +3,64 @@
   position: sticky;
   top: 0;
 }
+
 .h-container {
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: var(--secondary);
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
-.h-menu {
-  gap: 2rem;
+.search-bar {
+  width: fit-content;
+  max-width: 50%;
+  margin-left: auto; /* Pushes the search bar to the right */
+  margin-right: auto; /* Centers the search bar */
+  border-radius: 25px; /* Rounded corners */
+  background-color: grey;
 }
+h1{
+  color: #f6052d;
+  font-size: 3vw;
+}
+.search-bar input{
+  width: 70%;
+}
+
+.h-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center; /* Aligns menu items with the search bar and logo */
+}
+
 .h-menu > *:hover {
   cursor: pointer;
 }
+
 .menu-icon {
   display: none;
 }
+
 .button {
-  background-color: white;
-  color:black
+  background-color: gray;
+  color: black;
+  font-size: 1.5vw;
+  border-color: black;
+  border-radius: 25px;
+  outline: black;
 }
 
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
   }
+
+  .search-bar {
+    width: 200px; /* Adjust the width for smaller screens */
+  }
+
   .h-menu {
     color: var(--black);
     position: absolute;
