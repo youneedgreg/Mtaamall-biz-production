@@ -8,7 +8,8 @@ const Dashboard = () => {
   const { data: businesses, isError, isLoading: isBusinessLoading } = useProperties();
   const userEmail = isAuthenticated && user?.email;
 
-  const userBusinesses = businesses?.filter(business => business.userEmail === userEmail) || [];
+  // Find the first business associated with the authenticated user
+  const userBusiness = businesses?.find(business => business.userEmail === userEmail);
 
   if (isError) {
     return <div>Error fetching business data</div>;
@@ -18,23 +19,21 @@ const Dashboard = () => {
     return <div>Loading...</div>;
   }
 
+  const firstImage = userBusiness?.images[0] || '';
+  const businessTitle = userBusiness?.title || '';
+
   return (
     <div className="dashboard-container">
       <div className="sidebar">
-        <h2>Dashboard</h2>
-        <p>Total Businesses: {businesses.length}</p>
-        {isAuthenticated && (
+        {isAuthenticated && userBusiness && (
           <>
-            <p><strong>User Email:</strong> {userEmail}</p>
-            <h3>Your Businesses:</h3>
-            <ul>
-              {userBusinesses.map(business => (
-                <li key={business.id}>
-                  <strong>Email:</strong> {business.userEmail} <br />
-                  <strong>Title:</strong> {business.title}
-                </li>
-              ))}
-            </ul>
+            <div className="business-profile">
+              <div className="profile-image-wrapper">
+                <img src={firstImage} alt="Business" className="profile-image" />
+              </div>
+              <p className="business-title">{businessTitle}</p>
+              <p className="user-email">{userBusiness.userEmail}</p>
+            </div>
           </>
         )}
       </div>
