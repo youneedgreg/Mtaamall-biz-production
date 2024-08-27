@@ -30,6 +30,8 @@
   border-radius: 50%; /* Makes the image circular */
   overflow: hidden; /* Ensures the image fits within the circular shape */
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-image {
