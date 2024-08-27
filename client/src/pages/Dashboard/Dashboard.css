@@ -4,7 +4,7 @@
   }
   
   .sidebar {
-    width: 25%; /* 25% of the screen width */
+    width: 20%; /* 25% of the screen width */
     background-color: #f4f4f4; /* Light grey background for the sidebar */
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Slight shadow for a 3D effect */
