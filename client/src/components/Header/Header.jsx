@@ -24,7 +24,9 @@ const Header = () => {
     }
   };
   return (
-    <section className="h-wrapper" style={{ background: headerColor }}>
+    <section className="h-wrapper" style={{ background: headerColor,
+      borderBottomWidth: "5px",
+      boxShadow: "10px 10px 10px darkgray", }}>
       <div className="flexCenter innerWidth paddings h-container">
         {/* logo */}
         <Link to="https://mtaamall.vercel.app/">
@@ -45,6 +47,8 @@ const Header = () => {
             
 
             <a href="mailto:gregorytemwa1212@gmail.com" style={{color: "black"}}>Contact us</a>
+
+            <a href="/dashboard" style={{color: "black"}}><strong>Dashboard</strong></a>
 
             {/* add property */}
             <div onClick={handleAddPropertyClick} style={{color: "red"}}>Add Listing</div>
