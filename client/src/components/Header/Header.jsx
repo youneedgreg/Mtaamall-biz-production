@@ -17,20 +17,22 @@ const Header = () => {
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
   const { validateLogin } = useAuthCheck();
 
-
   const handleAddPropertyClick = () => {
     if (validateLogin()) {
       setModalOpened(true);
     }
   };
+
   return (
-    <section className="h-wrapper" style={{ background: headerColor,
+    <section className="h-wrapper" style={{
+      background: headerColor,
       borderBottomWidth: "5px",
-      boxShadow: "10px 10px 10px darkgray", }}>
+      boxShadow: "10px 10px 10px darkgray",
+    }}>
       <div className="flexCenter innerWidth paddings h-container">
         {/* logo */}
         <Link to="https://mtaamall.vercel.app/">
-        <h1>MtaaMall</h1>
+          <h1>MtaaMall</h1>
         </Link>
 
         {/* menu */}
@@ -39,20 +41,18 @@ const Header = () => {
             setMenuOpened(false);
           }}
         >
-          <div
-            // ref={menuRef}
-            className="flexCenter h-menu"
-            style={getMenuStyles(menuOpened)}
-          >
-            
+          <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
+            <a href="mailto:gregorytemwa1212@gmail.com" style={{ color: "black" }}>Contact us</a>
 
-            <a href="mailto:gregorytemwa1212@gmail.com" style={{color: "black"}}>Contact us</a>
-
-            <a href="/dashboard" style={{color: "black"}}><strong>Dashboard</strong></a>
+            {/* Conditionally render the Dashboard link if authenticated */}
+            {isAuthenticated && (
+              <a href="/dashboard" style={{ color: "black" }}><strong>Dashboard</strong></a>
+            )}
 
             {/* add property */}
-            <div onClick={handleAddPropertyClick} style={{color: "red"}}>Add Listing</div>
+            <div onClick={handleAddPropertyClick} style={{ color: "red" }}>Add Listing</div>
             <AddPropertyModal opened={modalOpened} setOpened={setModalOpened} />
+
             {/* login button */}
             {!isAuthenticated ? (
               <button background-color="white" color="black" className="button" onClick={loginWithRedirect}>
@@ -65,10 +65,7 @@ const Header = () => {
         </OutsideClickHandler>
 
         {/* for medium and small screens */}
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpened((prev) => !prev)}
-        >
+        <div className="menu-icon" onClick={() => setMenuOpened((prev) => !prev)}>
           <BiMenuAltRight size={30} />
         </div>
       </div>
