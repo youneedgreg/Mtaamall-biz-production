@@ -4,37 +4,14 @@
   }
   
   .sidebar {
-    width: 20%; /* 20% of the screen width */
+    width: 20%; /* 25% of the screen width */
     background-color: #f4f4f4; /* Light grey background for the sidebar */
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Slight shadow for a 3D effect */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-  }
-  
-  .business-logo {
-    width: 100px; /* Set an appropriate size for the logo */
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%; /* Make the logo circular */
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    margin: 10px 0;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  
-  p {
-    margin: 5px 0;
-    font-size: 1rem;
-    text-align: center;
   }
   
   .content {
-    width: 80%; /* 80% of the screen width */
+    width: 80%; /* 75% of the screen width */
     padding: 20px;
     background-color: #fff; /* White background for the content area */
   }
