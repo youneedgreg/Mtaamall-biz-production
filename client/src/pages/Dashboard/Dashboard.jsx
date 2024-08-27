@@ -69,7 +69,12 @@ const Dashboard = () => {
         </ul>
       </div>
       <div className="content">
-        {/* Content area */}
+        <div className="top-boxes">
+          <div className="box">Searches</div>
+          <div className="box">Listing Views</div>
+          <div className="box">Bookmarks</div>
+        </div>
+        {/* Content area below */}
         MtaaMall
       </div>
     </div>

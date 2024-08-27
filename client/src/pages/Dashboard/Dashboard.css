@@ -79,3 +79,32 @@
 .menu-item span {
   font-size: 1rem;
 }
+
+/* Styles for the top boxes */
+.top-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Space below the boxes */
+  height: 30%; /* Takes the top 30% of the content area */
+}
+
+.box {
+  flex: 1; /* Equal width for each box */
+  margin: 0 10px; /* Space between the boxes */
+  background-color: #f4f4f4;
+  border-radius: 10px; /* Rounded corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect to make boxes pop out */
+.box:hover {
+  transform: translateY(-5px); /* Slightly moves the box up */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to make it look like it's popping out */
+}
