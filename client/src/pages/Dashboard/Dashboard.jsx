@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { FaHome, FaBuilding, FaUsers, FaBook, FaEnvelope, FaUser, FaHeadset } from 'react-icons/fa';
 import './Dashboard.css';
 import useProperties from "../../hooks/useProperties";
 
@@ -36,6 +37,36 @@ const Dashboard = () => {
             </div>
           </>
         )}
+        <ul className="sidebar-menu">
+          <li className="menu-item">
+            <FaHome className="menu-icon" />
+            <span>Home</span>
+          </li>
+          <li className="menu-item">
+            <FaBuilding className="menu-icon" />
+            <span>Business</span>
+          </li>
+          <li className="menu-item">
+            <FaUsers className="menu-icon" />
+            <span>Users</span>
+          </li>
+          <li className="menu-item">
+            <FaBook className="menu-icon" />
+            <span>Bookings</span>
+          </li>
+          <li className="menu-item">
+            <FaEnvelope className="menu-icon" />
+            <span>Messages</span>
+          </li>
+          <li className="menu-item">
+            <FaUser className="menu-icon" />
+            <span>Profile</span>
+          </li>
+          <li className="menu-item">
+            <FaHeadset className="menu-icon" />
+            <span>Customer Support</span>
+          </li>
+        </ul>
       </div>
       <div className="content">
         {/* Content area */}

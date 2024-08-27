@@ -30,8 +30,7 @@
   border-radius: 50%; /* Makes the image circular */
   overflow: hidden; /* Ensures the image fits within the circular shape */
   margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
+  margin: auto;
 }
 
 .profile-image {
@@ -50,4 +49,33 @@
   font-size: 0.9rem;
   color: #555;
   margin-top: 5px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  width: 100%; /* Make the menu take full width of the sidebar */
+  margin-top: 20px; /* Space between the profile and menu */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #ddd; /* Light grey background on hover */
+}
+
+.menu-icon {
+  margin-right: 10px; /* Space between the icon and text */
+  font-size: 1.2rem;
+}
+
+.menu-item span {
+  font-size: 1rem;
 }
