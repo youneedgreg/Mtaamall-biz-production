@@ -46,10 +46,6 @@ const Dashboard = () => {
             <span>Business</span>
           </li>
           <li className="menu-item">
-            <FaUsers className="menu-icon" />
-            <span>Users</span>
-          </li>
-          <li className="menu-item">
             <FaBook className="menu-icon" />
             <span>Bookings</span>
           </li>
