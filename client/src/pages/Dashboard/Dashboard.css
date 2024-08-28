@@ -87,11 +87,11 @@
   margin-bottom: 20px; /* Space below the boxes */
   height: 20%; /* Takes the top 30% of the content area */
 }
+
 .bottom-boxes {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px; /* Space below the boxes */
-  height: 70%; /* Takes the top 30% of the content area */
+  height: 70%; /* Takes the bottom 70% of the content area */
 }
 
 .box {
@@ -108,7 +108,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-.enhance{
+
+.enhance {
   font-size: 1.5em;
   text-align: center;
 }
@@ -117,4 +118,21 @@
 .box:hover {
   transform: translateY(-5px); /* Slightly moves the box up */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to make it look like it's popping out */
+}
+
+/* Specific styles for the homepage and catalog boxes */
+.homepage {
+  width: 60%;
+}
+
+.catalog {
+  width: 40%;
+}
+
+.catalog-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  border-bottom: 2px solid #333; /* Underlined header */
 }

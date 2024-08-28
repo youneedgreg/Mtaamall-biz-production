@@ -9,7 +9,6 @@ const Dashboard = () => {
   const { data: businesses, isError, isLoading: isBusinessLoading } = useProperties();
   const userEmail = isAuthenticated && user?.email;
 
-  // Find the first business associated with the authenticated user
   const userBusiness = businesses?.find(business => business.userEmail === userEmail);
 
   if (isError) {
@@ -76,8 +75,10 @@ const Dashboard = () => {
         </div>
         <h2 className='enhance'>Enhance your business outcomes with our range of customer engagement tools and resources.</h2>
         <div className="bottom-boxes">
-          <div className="box" style={{width: "60%"}}>Homepage</div>
-          <div className="box" style={{width: "40%"}}>Catalog</div>
+          <div className="box homepage">Homepage</div>
+          <div className="box catalog">
+            <h2 className="catalog-header">Catalog</h2>
+          </div>
         </div>
       </div>
     </div>
