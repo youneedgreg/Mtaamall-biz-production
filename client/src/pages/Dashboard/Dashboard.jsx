@@ -69,7 +69,7 @@ const Dashboard = () => {
       </div>
       <div className="content">
         <div className="top-boxes">
-          <div className="box">Searches</div>
+          <div className="box">Searches count</div>
           <div className="box">Listing Views</div>
           <div className="box">Bookmarks</div>
         </div>
