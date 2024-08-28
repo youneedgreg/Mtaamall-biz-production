@@ -74,8 +74,19 @@ const Dashboard = () => {
           <div className="box">Listing Views</div>
           <div className="box">Bookmarks</div>
         </div>
+        <div className="middle-boxes">
+          <div className="box">Users</div>
+          <div className="box">Messages.</div>
+          <div className="box">Graph</div>
+        </div>
+        <h2>Enhance your business outcomes with our range of customer engagement tools and resources.</h2>
+        <div className="bottom-boxes">
+          <div className="box">Homepage</div>
+          <div className="box">Catalog</div>
+          <div className="box">Engagement</div>
+        </div>
         {/* Content area below */}
-        MtaaMall
+        
       </div>
     </div>
   );

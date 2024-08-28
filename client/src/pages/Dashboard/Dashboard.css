@@ -61,7 +61,7 @@
 .menu-item {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   color: #333;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -85,7 +85,19 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px; /* Space below the boxes */
-  height: 30%; /* Takes the top 30% of the content area */
+  height: 20%; /* Takes the top 30% of the content area */
+}
+.middle-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Space below the boxes */
+  height: 35%; /* Takes the top 30% of the content area */
+}
+.bottom-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Space below the boxes */
+  height: 35%; /* Takes the top 30% of the content area */
 }
 
 .box {
