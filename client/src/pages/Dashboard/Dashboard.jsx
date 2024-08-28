@@ -73,11 +73,11 @@ const Dashboard = () => {
           <div className="box">Listing Views</div>
           <div className="box">Bookmarks</div>
         </div>
-        <h2 className='enhance'>Enhance your business outcomes with our range of customer engagement tools and resources.</h2>
         <div className="bottom-boxes">
-          <div className="box homepage">Homepage</div>
-          <div className="box catalog">
-            <h2 className="catalog-header">Catalog</h2>
+          <div className="box" style={{ width: "60%" }}>Homepage</div>
+          <div className="catalog-section">
+            <h2 className='enhance'>Enhance your business outcomes with our range of customer engagement tools and resources.</h2>
+            <div className="box catalog-box">Catalog</div>
           </div>
         </div>
       </div>
