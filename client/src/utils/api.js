@@ -22,8 +22,7 @@ export const getAllProperties = async () => {
   }
 };
 
-
- {
+export const getProperty = async (id) => {
   try {
     const response = await api.get(`/business/${id}`, {
       timeout: 10 * 1000,
