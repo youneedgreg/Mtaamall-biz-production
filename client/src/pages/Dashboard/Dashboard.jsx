@@ -33,6 +33,7 @@ const Dashboard = () => {
               </div>
               <p className="business-title">{businessTitle}</p>
               <p className="user-email">{userBusiness.userEmail}</p>
+              <p className="search-count">Search Count: {userBusiness.searchCount}</p>
             </div>
           </>
         )}
