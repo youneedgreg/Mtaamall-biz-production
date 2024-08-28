@@ -6,9 +6,10 @@ export const api = axios.create({
   baseURL: "https://business-mtaamallserver.vercel.app/api",
 });
 
-export const getAllProperties = async () => {
+export const getAllProperties = async (filter = "") => {
   try {
-    const response = await api.get("/business/allbiz", {
+    const response = await api.get(`/business/allbiz`, {
+      params: { filter },
       timeout: 10 * 1000,
     });
 
@@ -21,6 +22,7 @@ export const getAllProperties = async () => {
     throw error;
   }
 };
+
 
 export const getProperty = async (id) => {
   try {

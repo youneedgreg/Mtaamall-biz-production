@@ -33,6 +33,7 @@ const Dashboard = () => {
               </div>
               <p className="business-title">{businessTitle}</p>
               <p className="user-email">{userBusiness.userEmail}</p>
+              <p className="search-count">Search Count: {userBusiness.searchCount}</p>
             </div>
           </>
         )}
@@ -69,7 +70,7 @@ const Dashboard = () => {
       </div>
       <div className="content">
         <div className="top-boxes">
-          <div className="box">Searches</div>
+          <div className="box">Searches count</div>
           <div className="box">Listing Views</div>
           <div className="box">Bookmarks</div>
         </div>
