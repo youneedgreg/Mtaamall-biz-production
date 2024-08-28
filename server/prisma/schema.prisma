@@ -34,8 +34,6 @@ model Business {
     owner          User     @relation("Owner", fields: [userEmail], references: [email])
     createdAt      DateTime @default(now())
     updatedAt      DateTime @updatedAt
-    searchCount    Int      @default(0) // <-- Add this line to track search count
 
-    @@unique(fields: [userEmail])
+    @@unique(fields: [ userEmail])
 }
-

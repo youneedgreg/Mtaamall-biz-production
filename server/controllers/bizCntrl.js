@@ -48,41 +48,11 @@ export const createBusiness = asyncHandler(async (req, res) => {
 
 // function to get all the documents/businesses
 export const getAllBusinesses = asyncHandler(async (req, res) => {
-  const { filter } = req.query; // Assuming the filter is passed as a query param
-
-  let businesses;
-
-  if (filter) {
-    businesses = await prisma.business.findMany({
-      where: {
-        OR: [
-          { title: { contains: filter, mode: "insensitive" } },
-          { city: { contains: filter, mode: "insensitive" } },
-          { country: { contains: filter, mode: "insensitive" } },
-        ],
-      },
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
-
-    // Increment searchCount for matched businesses
-    await Promise.all(
-      businesses.map(async (business) => {
-        await prisma.business.update({
-          where: { id: business.id },
-          data: { searchCount: { increment: 1 } },
-        });
-      })
-    );
-  } else {
-    businesses = await prisma.business.findMany({
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
-  }
-
+  const businesses = await prisma.business.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
   res.send(businesses);
 });
 
